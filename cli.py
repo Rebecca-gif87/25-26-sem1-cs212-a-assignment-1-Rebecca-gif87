@@ -29,9 +29,11 @@ def get_user_choice():
     print("3. info - Show program information")
     print("4. quit - Exit the program")
     print()
+    
 
     choice = input("Enter your choice (help/calc/info/quit): ").strip().lower()
     # TODO: Add code to return the choice
+    return choice
 
 
 def display_help():
@@ -71,7 +73,7 @@ def display_info():
     print("=" * 40)
 
 
-# TODO - Set the keyword arguments such that;
+# TODO - ;Set the keyword arguments such that
 # 1. show_goodbye defaults to True
 # 2. goodbye_message defaults to "Thank you for using Python CLI File Manager!"
 # 3. invalid_choice_prefix defaults to "Invalid choice:"
@@ -79,10 +81,10 @@ def display_info():
 def process_user_command(
     choice,
     running,
-    show_goodbye,
-    goodbye_message,
-    invalid_choice_prefix,
-    valid_commands,
+    show_goodbye=True,
+    goodbye_message="Thank you for using Python CLI File Manager!",
+    invalid_choice_prefix="Invalid choice:",
+    valid_commands="help, calc, info, quit",
 ):
     """
     Process a user command and return the updated running state.
@@ -123,9 +125,12 @@ def main():
     """Main program loop."""
     # Display welcome message
     # TODO: Call the function to display the welcome message
-
+    print("welcom")
+    main()
+    
     # Main command loop
     # TODO: Initialize a variable to control the loop. Hint set running = True
+    running = True
     while running:
         try:
             choice = get_user_choice()
@@ -146,3 +151,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
